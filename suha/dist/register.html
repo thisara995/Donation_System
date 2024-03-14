@@ -26,10 +26,184 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/default/lineicons.min.css">
+    <link rel="stylesheet" href="css/reg_form.css">
     <!-- Stylesheet-->
     <link rel="stylesheet" href="style.css">
     <!-- Web App Manifest-->
     <link rel="manifest" href="manifest.json">
+    <style>
+      .wrapper{
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.wrapper header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+.wrapper header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: #4070f4;
+}
+.wrapper form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.wrapper form .form{
+    position: absolute;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+.wrapper form .form.second{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
+form.secActive .form.second{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+.wrapper form .title{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color: #333;
+}
+.wrapper form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
+.input-field input, select{
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.input-field.checkbox input[type="checkbox"] {
+    margin-right: 10px; 
+}
+
+.input-field.checkbox label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+
+.input-field select,
+.input-field input[type="date"]{
+    color: #707070;
+}
+.input-field input[type="date"]:valid{
+    color: #333;
+}
+.wrapper form button, .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #4070f4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.wrapper form .btnText{
+    font-size: 14px;
+    font-weight: 400;
+}
+form button:hover{
+    background-color: #265df2;
+}
+form button i,
+form .backBtn i{
+    margin: 0 6px;
+}
+form .backBtn i{
+    transform: rotate(180deg);
+}
+form .buttons{
+    display: flex;
+    align-items: center;
+}
+form .buttons button , .backBtn{
+    margin-right: 14px;
+}
+
+@media (max-width: 750px) {
+    .wrapper form{
+        overflow-y: scroll;
+    }
+    .wrapper form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+    
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+}
+    </style>
   </head>
   <body>
     <!-- Preloader-->
@@ -39,55 +213,107 @@
       </div>
     </div>
     <!-- Login Wrapper Area-->
-    <div class="login-wrapper d-flex align-items-center justify-content-center text-center">
-      <!-- Background Shape-->
-      <div class="background-shape"></div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5"><img class="big-logo" src="img/core-img/logo-white.png" alt="">
-            <!-- Register Form-->
-            <div class="register-form mt-5 px-4">
-              <form action="otp.html" method="">
-              
-          
-                <div class="form-group text-start mb-4"><span>Full Name</span>
-                  <label for="Full Name"><i class="lni lni-user"></i></label>
-                  <input class="form-control" id="fullname" type="text" placeholder="Full Name : Jhone Doe">
-                </div>
-                <div class="form-group text-start mb-4"><span>Email</span>
-                  <label for="email"><i class="lni lni-envelope"></i></label>
-                  <input class="form-control" id="email" type="email" placeholder="Email : Jhondoe@gmail.com">
-                </div>
-               
-                <div class="form-group text-start mb-4">
-                  <span>Phone Number</span>
-                  <label for="phone_number"><i class="lni lni-phone"></i></label>
-                  <input class="form-control" id="phone_number" type="tel" placeholder="Phone Number : 0123456789">
-              </div>              
-              
-                <div class="form-group text-start mb-4"><span>Password</span>
-                  <label for="password"><i class="lni lni-lock"></i></label>
-                  <input class="input-psswd form-control" id="registerPassword" type="password" placeholder="Password">
-                </div>
+    <div class="login-wrapper d-flex align-items-center justify-content-center text-left"> 
+          <div class="wrapper">
+            <header>Admin Information</header>
+            <form action="#">
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title">Organization Details</span>
+    
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>Organization Name</label>
+                                <input type="text" placeholder="Enter Organization Name" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Short Name,Organization</label>
+                                <input type="text" placeholder="Enter Organization Short Name" required>
+                            </div>
 
-                <div class="form-group text-start mb-4"><span>Confirom Password</span>
-                  <label for="Confirom Password"><i class="lni lni-lock"></i></label>
-                  <input class="input-psswd form-control" id="registerPassword" type="password" placeholder="Confirom Password">
-                </div>
-                <div class="form-group text-start mb-4">
-                  <input type="radio" value="none" id="male" name="gender" checked/>
-                  <label for="male" class="radio">Male</label>
-                  <input type="radio" value="none" id="female" name="gender" />
-                  <label for="female" class="radio">Female</label>
-                </div>
-                <button class="btn btn-success btn-lg w-100" type="submit">Register</button>
-              </form>
-            </div>
-            <!-- Login Meta-->
-            <div class="login-meta-data">
-              <p class="mt-3 mb-0">Already have an account?<a class="ms-1" href="login.html">Log In</a></p>
-            </div>
-          </div>
+                            <div class="input-field">
+                              <label>Organization Type</label>
+                              <select required>
+                                  <option disabled selected>Select Organization</option>
+                                  <option>sample</option>
+                                  <option>sample</option>
+                                  <option>sample</option>
+                              </select>
+                          </div>
+
+                          <div class="input-field">
+                            <label>Registerd Organization Type</label>
+                            <select required>
+                                <option disabled selected>Select Registered Organization</option>
+                                <option>sample</option>
+                                <option>sample</option>
+                                <option>sample</option>
+                            </select>
+                        </div>
+  
+    
+                            <div class="input-field">
+                                <label>Organization Register Number</label>
+                                <input type="text" placeholder="Enter Organization Register Number" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Email Organization</label>
+                                <input type="number" placeholder="Enter Email" required>
+                            </div>
+                    </div>
+    
+                    <div class="details ID">
+                        <span class="title">Admin Details</span>
+    
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Enter Admin's Full Name" required>
+                            </div>
+    
+                            <div class="input-field">
+                              <label>Nationality</label>
+                              <select required>
+                                  <option disabled selected>Select Nationality</option>
+                                  <option>Japan</option>
+                                  <option>Chaina</option>
+                                  <option>Maleshiya</option>
+                              </select>
+                          </div>
+    
+                            <div class="input-field">
+                                <label>IC/Passport Number</label>
+                                <input type="text" placeholder="Enter Passport Number" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Phone Number</label>
+                                <input type="tel" placeholder="Enter Phone Number" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Email</label>
+                                <input type="email" placeholder="Enter Email" required>
+                            </div>
+    
+                            <div class="input-field">
+                                <label>Password</label>
+                                <input type="password" placeholder="Enter Password" required>
+                            </div>
+                            <div class="input-field">
+                              <label> Confirom Password</label>
+                              <input type="password" placeholder="Enter Confirom Password" required>
+                          </div>
+                        </div>
+                        <button class="sumbit">
+                          <span class="btnText">Submit</span>
+                          <i class="uil uil-navigator"></i>
+                    </div> 
+                </div>                   
+            </form>
+        </div>
         </div>
       </div>
     </div>
