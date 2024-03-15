@@ -866,7 +866,7 @@ textarea:invalid {
     position: relative;
     z-index: 1; }
     .top-search-form form .form-control {
-      max-width: 190px;
+      max-width: 150px;
       background-color: #ffffff;
       height: 32px;
       font-size: 12px;
