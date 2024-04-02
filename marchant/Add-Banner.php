@@ -1,6 +1,4 @@
-To add an image preview functionality to the form, you'll need to include some JavaScript. Here's the modified code with image preview functionality:
 
-```php
 <?php
 include('includes/header.php');
 include('includes/navbar.php');
